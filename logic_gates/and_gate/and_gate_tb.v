@@ -8,7 +8,7 @@ module Testbench;
   initial begin
     $dumpfile("and_wave.vcd");
     $dumpvars(0, Testbench);
-    $monitor("a=%b  b=%b | AND Ouput=%b", a, b, y);
+    $monitor("a=%b  b=%b | AND Output=%b", a, b, y);
     a = 0; b = 0; #10;
     a = 0; b = 1; #10;
     a = 1; b = 0; #10;
