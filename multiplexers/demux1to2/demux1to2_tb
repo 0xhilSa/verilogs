@@ -1,0 +1,77 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55e46a7dc350 .scope module, "Testbench" "Testbench" 2 2;
+ .timescale -9 -12;
+v0x55e46a7f24a0_0 .var "din", 0 0;
+v0x55e46a7f2560_0 .net "dout0", 0 0, L_0x55e46a802ad0;  1 drivers
+v0x55e46a7f2630_0 .net "dout1", 0 0, L_0x55e46a802f60;  1 drivers
+v0x55e46a7f2730_0 .var "sel", 0 0;
+S_0x55e46a7dc4e0 .scope module, "uut" "DEMUX1TO2" 2 8, 3 1 0, S_0x55e46a7dc350;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "din";
+    .port_info 1 /INPUT 1 "sel";
+    .port_info 2 /OUTPUT 1 "dout0";
+    .port_info 3 /OUTPUT 1 "dout1";
+v0x55e46a7dc6c0_0 .net *"_ivl_0", 31 0, L_0x55e46a7f2800;  1 drivers
+v0x55e46a7f1950_0 .net *"_ivl_12", 31 0, L_0x55e46a802cb0;  1 drivers
+L_0x7f45a06040f0 .functor BUFT 1, C4<0000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55e46a7f1a30_0 .net *"_ivl_15", 30 0, L_0x7f45a06040f0;  1 drivers
+L_0x7f45a0604138 .functor BUFT 1, C4<00000000000000000000000000000001>, C4<0>, C4<0>, C4<0>;
+v0x55e46a7f1af0_0 .net/2u *"_ivl_16", 31 0, L_0x7f45a0604138;  1 drivers
+v0x55e46a7f1bd0_0 .net *"_ivl_18", 0 0, L_0x55e46a802e20;  1 drivers
+L_0x7f45a0604180 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55e46a7f1ce0_0 .net/2u *"_ivl_20", 0 0, L_0x7f45a0604180;  1 drivers
+L_0x7f45a0604018 .functor BUFT 1, C4<0000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55e46a7f1dc0_0 .net *"_ivl_3", 30 0, L_0x7f45a0604018;  1 drivers
+L_0x7f45a0604060 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55e46a7f1ea0_0 .net/2u *"_ivl_4", 31 0, L_0x7f45a0604060;  1 drivers
+v0x55e46a7f1f80_0 .net *"_ivl_6", 0 0, L_0x55e46a802960;  1 drivers
+L_0x7f45a06040a8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55e46a7f2040_0 .net/2u *"_ivl_8", 0 0, L_0x7f45a06040a8;  1 drivers
+v0x55e46a7f2120_0 .net "din", 0 0, v0x55e46a7f24a0_0;  1 drivers
+v0x55e46a7f21e0_0 .net "dout0", 0 0, L_0x55e46a802ad0;  alias, 1 drivers
+v0x55e46a7f22a0_0 .net "dout1", 0 0, L_0x55e46a802f60;  alias, 1 drivers
+v0x55e46a7f2360_0 .net "sel", 0 0, v0x55e46a7f2730_0;  1 drivers
+L_0x55e46a7f2800 .concat [ 1 31 0 0], v0x55e46a7f2730_0, L_0x7f45a0604018;
+L_0x55e46a802960 .cmp/eq 32, L_0x55e46a7f2800, L_0x7f45a0604060;
+L_0x55e46a802ad0 .functor MUXZ 1, L_0x7f45a06040a8, v0x55e46a7f24a0_0, L_0x55e46a802960, C4<>;
+L_0x55e46a802cb0 .concat [ 1 31 0 0], v0x55e46a7f2730_0, L_0x7f45a06040f0;
+L_0x55e46a802e20 .cmp/eq 32, L_0x55e46a802cb0, L_0x7f45a0604138;
+L_0x55e46a802f60 .functor MUXZ 1, L_0x7f45a0604180, v0x55e46a7f24a0_0, L_0x55e46a802e20, C4<>;
+    .scope S_0x55e46a7dc350;
+T_0 ;
+    %vpi_call 2 16 "$monitor", "Time = %0t | din = %d | sel = %b | dout0 = %b | dout1 = %b", $time, v0x55e46a7f24a0_0, v0x55e46a7f2730_0, v0x55e46a7f2560_0, v0x55e46a7f2630_0 {0 0 0};
+    %vpi_call 2 17 "$dumpfile", "demux1to2.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55e46a7dc350 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e46a7f24a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e46a7f2730_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e46a7f2730_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e46a7f24a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e46a7f2730_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e46a7f2730_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 26 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "demux1to2_tb.v";
+    "demux1to2.v";
