@@ -18,7 +18,7 @@ module Testbench;
     S = 0;
     R = 0;
 
-    $dumpfile("dump.vcd");
+    $dumpfile("sr.vcd");
     $dumpvars(0, Testbench);
 
     #10 S = 1; R = 0;
