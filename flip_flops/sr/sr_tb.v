@@ -1,4 +1,3 @@
-`timescale 1ns/1ps
 module Testbench;
   reg S, R, CLK;
   wire Q, Qn;
