@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 module Testbench;
   reg [1:0] sel;
   reg d0, d1, d2, d3;
@@ -17,14 +15,13 @@ module Testbench;
   initial begin
     $dumpfile("mux4to1_tb.vcd");
     $dumpvars(0, Testbench);
-    $monitor("Time=%0t | sel=%b | d0=%b d1=%b d2=%b d3=%b | y=%b",
-             $time, sel, d0, d1, d2, d3, y);
+    $monitor("Time=%0t | sel=%b | d0=%b d1=%b d2=%b d3=%b | y=%b", $time, sel, d0, d1, d2, d3, y);
     d0 = 0; d1 = 1; d2 = 0; d3 = 1;
     
-    sel = 2'b00; #10;  // Expect y = d0 (0)
-    sel = 2'b01; #10;  // Expect y = d1 (1)
-    sel = 2'b10; #10;  // Expect y = d2 (0)
-    sel = 2'b11; #10;  // Expect y = d3 (1)
+    sel = 2'b00; #10;
+    sel = 2'b01; #10;
+    sel = 2'b10; #10;
+    sel = 2'b11; #10;
 
     $finish;
   end
