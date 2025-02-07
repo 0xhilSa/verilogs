@@ -1,0 +1,122 @@
+$date
+	Thu Feb  6 00:17:00 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module ENDS_WITH_0_TB $end
+$var wire 1 ! accept $end
+$var reg 1 " clk $end
+$var reg 1 # in $end
+$var reg 1 $ rst $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 1 # in $end
+$var wire 1 $ rst $end
+$var reg 1 ! accept $end
+$var reg 1 % next_state $end
+$var reg 1 & state $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0&
+0%
+1$
+0#
+0"
+1!
+$end
+#5
+1"
+#10
+0"
+0$
+#15
+1"
+#20
+1%
+0"
+1#
+#25
+0!
+1&
+1"
+#30
+0"
+#35
+1"
+#40
+0%
+0"
+0#
+#45
+1!
+0&
+1"
+#50
+0"
+#55
+1"
+#60
+1%
+0"
+1#
+#65
+0!
+1&
+1"
+#70
+0%
+0"
+0#
+#75
+1!
+0&
+1"
+#80
+1%
+0"
+1#
+#85
+0!
+1&
+1"
+#90
+0"
+#95
+1"
+#100
+0"
+#105
+1"
+#110
+0%
+0"
+0#
+#115
+1!
+0&
+1"
+#120
+0"
+#125
+1"
+#130
+1%
+0"
+1#
+#135
+0!
+1&
+1"
+#140
+0"
+#145
+1"
+#150
+0"
