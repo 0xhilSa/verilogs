@@ -1,7 +1,13 @@
 module SR (
   input S, R,
-  output Q, Qbar
+  output reg Q, Qbar
 );
-  assign Q = ~(S & Qbar);
-  assign Qbar = ~(R & Q);
+  always @(*) begin
+    case ({S, R})
+      2'b00: ;
+      2'b01: begin Q = 0; Qbar = 1; end
+      2'b10: begin Q = 1; Qbar = 0; end
+      2'b11: begin Q = 1'bx; Qbar = 1'bx; end
+    endcase
+  end
 endmodule
