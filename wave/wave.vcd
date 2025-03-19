@@ -1,0 +1,28 @@
+$date
+	Tue Mar 18 00:33:55 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module WAVE_TB $end
+$var reg 1 ! wave $end
+$scope module uut $end
+$var wire 1 ! wave $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+$end
+#10
+1!
+#40
+0!
+#80
+1!
+#90
+0!
